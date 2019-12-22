@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <nav-bar :items="navigationItens"/>
+      <home/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Home from './pages/Home.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    Home,
+    NavBar,
+  },
+  data() {
+    return {
+      navigationItens: [
+        { name: 'portfolio', src: '#initial' },
+        { name: 'about me', src: '#about-me' },
+        { name: 'projects', src: '#projects' },
+        { name: 'contact', src: '#contacts' },
+      ],
+    };
   },
 };
 </script>
@@ -23,6 +37,24 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+img {
+  width: 100%;
+  position: relative;
+}
+
+.app__introduce {
+  position: absolute;
+  color: white;
+  background-color: red;
+
+  h1 {
+    top: 50%;
+  }
+
+  h2 {
+    top: 30%;
+  }
 }
 </style>
