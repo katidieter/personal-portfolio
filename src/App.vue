@@ -2,6 +2,7 @@
   <div id="app">
     <div>
       <nav-bar :items="navigationItens"/>
+      <router-view></router-view>
       <home/>
     </div>
   </div>
@@ -20,7 +21,7 @@ export default {
   data() {
     return {
       navigationItens: [
-        { name: 'portfolio', src: '#initial' },
+        { name: 'portfolio', src: '#home' },
         { name: 'about me', src: '#about-me' },
         { name: 'projects', src: '#projects' },
         { name: 'contact', src: '#contacts' },
@@ -39,22 +40,4 @@ export default {
   color: #2c3e50;
 }
 
-img {
-  width: 100%;
-  position: relative;
-}
-
-.app__introduce {
-  position: absolute;
-  color: white;
-  background-color: red;
-
-  h1 {
-    top: 50%;
-  }
-
-  h2 {
-    top: 30%;
-  }
-}
 </style>
