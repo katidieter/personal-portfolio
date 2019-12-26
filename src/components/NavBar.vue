@@ -1,9 +1,13 @@
 <template>
   <div class="navbar">
-    <div class="navbar__link navbar__link-toggle" @click="toggleShow">
-      <bars-icon />
+    <div class="navbar__burguer-menu">
+      <Slide right>
+        <a  v-for="(item, i) in items" :key="i" :id="item.src" :href="item.src">
+          <span>{{ item.name }}</span>
+        </a>
+      </Slide>
     </div>
-    <nav class="navbar__items navbar__items--left" :class="{ 'navbar__toggleShow': toggle }">
+    <nav class="navbar__items navbar__items--left">
       <a :href="item.src" class="navbar__link" v-for="(item, i) in items" :key="i">
         {{ item.name }}
       </a>
@@ -12,27 +16,17 @@
 </template>
 
 <script>
-import BarsIcon from './atoms/BarsIcon.vue';
+import { Slide } from 'vue-burger-menu';
 
 export default {
   name: 'NavBar',
   components: {
-    BarsIcon,
+    Slide,
   },
   props: {
     items: {
       type: Array,
       required: true,
-    },
-  },
-  data() {
-    return {
-      toggle: false,
-    };
-  },
-  methods: {
-    toggleShow() {
-      this.toggle = !this.toggle;
     },
   },
 };
@@ -41,12 +35,21 @@ export default {
 <style scoped>
 .navbar {
   position: fixed;
+  overflow: hidden;
   top: 0;
   display: flex;
   width: 100%;
-  padding: 30px;
+  padding: 10px;
   font-family: sans-serif;
-  color: white;
+  color: #000;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 80%;
+    position: unset;
+  }
 }
 
 .navbar__link {
@@ -54,6 +57,8 @@ export default {
   color: #000;
   font-weight: 600;
   text-decoration-line: none;
+  padding: 0.5rem;
+  z-index: 10;
 }
 
 .navbar__items {
@@ -64,7 +69,7 @@ export default {
   margin-right: auto;
 }
 
-.navbar__link-toggle {
+.navbar__burguer-menu {
   display: none;
 }
 
@@ -78,21 +83,8 @@ export default {
     display: none;
   }
 
-  .navbar__items--left {
-    margin-left: 0;
-    padding-left: 2rem;
-  }
-
-  .navbar__toggleShow {
+  .navbar__burguer-menu {
     display: flex;
-    align-items: center;
-  }
-
-  .navbar__link-toggle {
-    align-self: flex-end;
-    display: initial;
-    position: absolute;
-    cursor: pointer;
   }
 }
 </style>
