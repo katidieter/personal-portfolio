@@ -24,18 +24,19 @@
       </div>
     </section>
     <section id="about-me">
-      <!-- <div>
-        jobs timeline
+      <h2>About me</h2>
+      <div class="about-me__content">
+        <div>
+          {{ professional.history }}
+        </div>
+        <div>
+          <ExperienceCard :experiencies="professional.experiences"/>
+        </div>
+        <div>
+          card with my educations
+        </div>
+        <a>Link to linkedin</a>
       </div>
-      <div>
-        academic life
-      </div>
-      <div>
-        courses
-      </div>
-      <div>
-        volunteer projects
-      </div> -->
     </section>
     <section id="projects">projects grid</section>
     <section id="contacts">contact me</section>
@@ -43,8 +44,12 @@
 </template>
 <script>
 import ProfessionalData from '../data/professional-data';
+import ExperienceCard from '../components/ExperienceCard.vue';
 
 export default {
+  components: {
+    ExperienceCard,
+  },
   computed: {
     professional() { return ProfessionalData; },
     skills() { return this.professional.skills; },
@@ -130,8 +135,10 @@ img {
   }
 }
 
-#about-me {
-  /* background-color: rgb(14, 0, 0); */
+.about-me__content {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  padding: 1rem;
 }
 
 </style>
