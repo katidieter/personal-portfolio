@@ -1,0 +1,20 @@
+module.exports = {
+  name: 'Katieli B. Dieter',
+  role: 'Software Engineer',
+  skills: [
+    { name: 'VueJs', kind: 'hard' },
+    { name: 'Ruby', kind: 'hard' },
+    { name: 'Teamwork', kind: 'soft' },
+    { name: 'Javascript', kind: 'hard' },
+    { name: 'Leadership', kind: 'soft' },
+    { name: 'Problem solving', kind: 'soft' },
+    { name: 'Responsability', kind: 'soft' },
+    { name: 'Git', kind: 'hard' },
+    { name: 'Clean code', kind: 'hard' },
+    { name: 'Proactively', kind: 'soft' },
+    { name: 'Goal-driven', kind: 'soft' },
+    { name: 'Object-oriented', kind: 'hard' },
+    { name: 'Unit/UI Testing', kind: 'hard' },
+    { name: 'CSS', kind: 'hard' },
+  ],
+};
