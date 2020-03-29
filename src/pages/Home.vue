@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="home__right">
-          <img src="../assets/kati.jpg">
+          <img src="../assets/kati.png">
         </div>
       </div>
     </section>
@@ -29,13 +29,11 @@
         <div>
           {{ professional.history }}
         </div>
-        <div>
-          <ExperienceCard :experiencies="professional.experiences"/>
+        <div class="about-me__cards">
+          <HistoryCard cardName="Latest experiences" :items="professional.experiences"/>
+          <HistoryCard cardName="Education" :items="professional.education"/>
         </div>
-        <div>
-          card with my educations
-        </div>
-        <a>Link to linkedin</a>
+        <button @click="goToLinkedin()">Click to see my LinkedIn</button>
       </div>
     </section>
     <section id="projects">projects grid</section>
@@ -44,27 +42,40 @@
 </template>
 <script>
 import ProfessionalData from '../data/professional-data';
-import ExperienceCard from '../components/ExperienceCard.vue';
+import HistoryCard from '../components/HistoryCard.vue';
 
 export default {
   components: {
-    ExperienceCard,
+    HistoryCard,
   },
   computed: {
     professional() { return ProfessionalData; },
     skills() { return this.professional.skills; },
   },
+  methods: {
+    goToLinkedin() {
+      window.open(this.professional.linkedinUrl, '_blank');
+    },
+  },
 };
 
 </script>
-<style scoped>
-section {
-  height: 100vh;
-  padding-top: 15px;
+<style lang="stylus" scoped>
+.home-page {
+  margin-top: 40px;
 }
 
+@media only screen and (min-width: 768px) {
+  margin-top: 0;
+  margin: 30px;
+}
+
+section {
+  padding-top: 15px;
+}
 .home__content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: 90%;
   padding: 1rem;
@@ -79,13 +90,20 @@ section {
 }
 .home__right {
   width: 100%;
+  img {
+    border-radius: 100%;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+  }
+
 }
 img {
   width: inherit;
   max-height: 90vh;
   object-fit: contain;
+  border-radius: 5px;
 }
-
 .title,
 .subtitle {
   font-weight: bold;
@@ -110,21 +128,20 @@ img {
   font-size: 0.8rem;
 }
 .soft-border {
-  border: 1px solid rgb(96, 142, 228);
+  border: 1px solid #72C6B3;
 }
-
 .hard-border {
-  border: 1px solid green;
+  border: 1px solid #FEAB5C;
 }
 
 @media only screen and (min-width: 768px) {
   .home__content {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
     padding: 2rem;
   }
   section {
+    height: 100vh;
     padding-top: 55px;
   }
   .title {
@@ -136,9 +153,17 @@ img {
 }
 
 .about-me__content {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
   padding: 1rem;
+}
+.about-me__cards {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-me__cards {
+    flex-direction: row;
+  }
 }
 
 </style>

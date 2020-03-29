@@ -1,27 +1,30 @@
 <template>
-  <div class="experience-card">
-    <h3>Latest experiences</h3>
-    <div v-for="(experiencie, i) in experiencies" :key="i" class="experience__details">
+  <div class="history-card">
+    <h3>{{ cardName }}</h3>
+    <div v-for="(item, i) in items" :key="i" class="history__details">
       <h4>
-        {{ experiencie.company }}
+        {{ item.title }}
       </h4>
       <h5>
-        {{ experiencie.role }}
+        {{ item.subtitle }}
       </h5>
       <span>
-        {{ experiencie.period }}
+        {{ item.period }}
       </span>
       <span>
-        {{ experiencie.location }}
+        {{ item.location }}
       </span>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'ExperienceCard',
+  name: 'HistoryCard',
   props: {
-    experiencies: {
+    cardName: {
+      type: String,
+    },
+    items: {
       type: Object,
     },
   },
@@ -32,7 +35,7 @@ h3, h4, h5 {
   margin: unset;
 }
 
-.experience-card {
+.history-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -40,9 +43,8 @@ h3, h4, h5 {
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;
-  width: 40%;
 }
-.experience__details {
+.history__details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,5 +52,11 @@ h3, h4, h5 {
 }
 span {
   font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .history-card {
+    width: 50%;
+  }
 }
 </style>
