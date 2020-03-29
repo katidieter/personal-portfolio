@@ -1,27 +1,11 @@
 <template>
   <div id="home-page">
     <section id="home">
-      <div class="home__content">
-        <div class="home__left">
-          <div class="title">
-            {{ professional.name }}
-          </div>
-          <div class="subtitle">
-            {{ professional.role }}
-          </div>
-          <div class="home__tags">
-            <span
-              v-for="(skill, s) in skills" :key="s"
-              :class="skill.kind === 'soft'? 'soft-border' : 'hard-border'"
-            >
-            {{ skill.name }}
-            </span>
-          </div>
-        </div>
-        <div class="home__right">
-          <img src="../assets/kati.png">
-        </div>
-      </div>
+      <hello-world
+        :avatar-image="professionalImage"
+        :title="`Hey! I'm ${professional.name}`"
+        :subtitle="professional.role"
+      />
     </section>
     <section id="about-me">
       <h2>About me</h2>
@@ -42,14 +26,22 @@
 </template>
 <script>
 import ProfessionalData from '../data/professional-data';
+import HelloWorld from '../components/HelloWorld.vue';
 import HistoryCard from '../components/HistoryCard.vue';
 
 export default {
   components: {
+    HelloWorld,
     HistoryCard,
   },
   computed: {
     professional() { return ProfessionalData; },
+    professionalImage() {
+      return {
+        src: this.professional.avatar,
+        alt: this.professional.name,
+      };
+    },
     skills() { return this.professional.skills; },
   },
   methods: {
@@ -61,109 +53,35 @@ export default {
 
 </script>
 <style lang="stylus" scoped>
-.home-page {
-  margin-top: 40px;
-}
+section
+  padding-top 15px
 
-@media only screen and (min-width: 768px) {
-  margin-top: 0;
-  margin: 30px;
-}
+@media only screen and (min-width: 768px)
+  height 100vh
 
-section {
-  padding-top: 15px;
-}
-.home__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 90%;
-  padding: 1rem;
-}
-.home__left {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.home__right {
-  width: 100%;
-  img {
-    border-radius: 100%;
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-  }
+#home
+  height 100vh
+  display flex
+  justify-content center
+  align-items center
 
-}
-img {
-  width: inherit;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: 5px;
-}
-.title,
-.subtitle {
-  font-weight: bold;
-}
-.title {
-    font-size: 20px;
-  }
-  .subtitle {
-    font-size: 30px;
-    margin-bottom: 0.6rem;
-  }
-.home__tags {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-}
-.soft-border,
-.hard-border {
-  border-radius: 5px;
-  padding: 0.2rem;
-  margin: 0.1rem;
-  font-size: 0.8rem;
-}
-.soft-border {
-  border: 1px solid #72C6B3;
-}
-.hard-border {
-  border: 1px solid #FEAB5C;
-}
+  @media only screen and (min-width: 768px)
+    justify-content flex-start
+    padding-left 80px
 
-@media only screen and (min-width: 768px) {
-  .home__content {
-    flex-direction: row;
-    justify-content: center;
-    padding: 2rem;
-  }
-  section {
-    height: 100vh;
-    padding-top: 55px;
-  }
-  .title {
-    font-size: 30px;
-  }
-  .subtitle {
-    font-size: 45px;
-  }
-}
+@media only screen and (min-width: 768px)
+  section
+    height 100vh
 
-.about-me__content {
-  padding: 1rem;
-}
-.about-me__cards {
-  display: flex;
-  flex-direction: column;
-}
+.about-me__content
+  padding 1rem
 
-@media only screen and (min-width: 768px) {
-  .about-me__cards {
-    flex-direction: row;
-  }
-}
+.about-me__cards
+  display flex
+  flex-direction column
+
+@media only screen and (min-width: 768px)
+  .about-me__cards
+    flex-direction row
 
 </style>
