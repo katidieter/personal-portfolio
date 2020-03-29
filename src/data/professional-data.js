@@ -4,7 +4,8 @@ import LinkedinIcon from '../assets/icons/linkedin.png';
 import MediumIcon from '../assets/icons/medium.webp';
 
 export default {
-  name: 'Katieli B. Dieter',
+  name: 'Katie',
+  avatar: 'kati.png',
   role: 'Software Engineer',
   skills: [
     { name: 'Vue.js', kind: 'hard' },
