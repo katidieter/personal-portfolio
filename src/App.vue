@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       navigationItens: [
-        { name: 'portfolio', src: '#home' },
+        { name: 'hello world!', src: '#home' },
         { name: 'about me', src: '#about-me' },
         { name: 'projects', src: '#projects' },
         { name: 'contact', src: '#contacts' },
