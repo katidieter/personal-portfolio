@@ -12,7 +12,7 @@
         {{ item.name }}
       </a>
     </nav>
-    <nav class="navbar__items navbar__items--right">
+    <nav class="navbar__items">
       <a
         v-for="(socialMedia, i) in socialMedias" :key="i"
         :href="socialMedia.src"
@@ -56,7 +56,7 @@ export default {
   overflow: hidden;
   top: 0;
   display: flex;
-  width: 100%;
+  width: -webkit-fill-available;
   padding: 10px;
   background-color: #fff;
 }
@@ -70,7 +70,7 @@ export default {
 
 @media only screen and (min-width: 768px) {
   .navbar {
-    margin: 30px;
+    margin: 0px 50px;
   }
 }
 
@@ -89,10 +89,6 @@ export default {
 
 .navbar__items--left {
   margin-right: auto;
-}
-
-.navbar__items--right {
-  margin-right: 100px;
 }
 
 .navbar__burguer-menu {
