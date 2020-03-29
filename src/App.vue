@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <div>
-      <nav-bar :items="navigationItens"/>
+      <nav-bar
+        :items="navigationItens"
+        :social-medias="socialMedias"
+      />
       <router-view></router-view>
       <home/>
     </div>
@@ -9,6 +12,8 @@
 </template>
 
 <script>
+import ProfessionalData from './data/professional-data';
+
 import Home from './pages/Home.vue';
 import NavBar from './components/NavBar.vue';
 
@@ -27,6 +32,14 @@ export default {
         { name: 'contact', src: '#contacts' },
       ],
     };
+  },
+  computed: {
+    professional() {
+      return ProfessionalData;
+    },
+    socialMedias() {
+      return this.professional.socialMedias;
+    },
   },
 };
 </script>
