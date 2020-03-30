@@ -12,10 +12,16 @@
         <h3>
           {{ project.title }}
         </h3>
+        <button
+          @click="goToRepository(project.repositoryLink)"
+          class="project-repository-button"
+        >
+          Access the code repository
+        </button>
         <div class="project-tags">
           <span
             v-for="(tag, t) in project.tags" :key="t"
-            :style="`border: solid 1px ${tag.color}`"
+            :style="`background-color: ${tag.color}`"
           >
             {{ tag.name }}
           </span>
@@ -50,6 +56,9 @@ export default {
         });
       });
     },
+    goToRepository(link) {
+      window.open(link, '_blank');
+    },
   },
 };
 </script>
@@ -57,36 +66,56 @@ export default {
 <style lang="stylus" scoped>
 #projects-grid
   display flex
-  flex-direction row
   flex-wrap wrap
   width 100%
   justify-content space-between
 
+  @media only screen and (min-width: 768px)
+    flex-direction row
+
 .project
-  max-width 30%
   border-radius 5px
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
   margin-top 20px
 
+  @media only screen and (min-width: 768px)
+    width 30%
+
   .project-image
-    max-height 200px
+    height 170px
+    object-fit cover
     border-radius 5px 5px 0px 0px
     width 100%
 
   .project-info
+    display flex
+    flex-direction column
+    align-items flex-start
     padding 10px
+
+    .project-repository-button
+      margin 20px 0
+      background-color #fff
+      text-decoration underline
+      color #075F93
+      font-size 16px
+      border-radius 5px
+      border none
+      cursor pointer
 
     .project-tags
       display flex
       justify-content flex-start
+      flex-wrap wrap
 
     h3
-      font-size 24px
+      font-size 20px
       text-align left
       margin 0px
 
     span
-      padding 2px
+      padding 4px
       border-radius 5px
       margin 5px
+      color #fff
 </style>
