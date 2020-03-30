@@ -45,33 +45,35 @@ export default {
   ],
   intro: 'I am a software engineer based in sunny Brazil.',
   history: 'With for more than 8 years experiency in technology I had worked in different areas as technical support, quality assurance and now as developer and leader. I enjoy to solve complex problems with simple ideas. When I am not coding or leadering the team or writing something you will find me hanging out with friends, tasting a coffee, running or spending time at nature.',
-  experiences: [
-    {
-      title: 'Wedy',
-      subtitle: 'Software Engineering Lead',
-      period: 'Jul 2019 -  Present',
-      location: 'São Leopoldo, Rio Grande do Sul, Brazil',
-    },
-    {
-      title: 'Wedy',
-      subtitle: 'Software Engineer',
-      period: 'Mar 2019 -  Jun 2019',
-      location: 'São Leopoldo, Rio Grande do Sul, Brazil',
-    },
-  ],
-  education: [
-    {
-      title: 'Universidade do Vale do Rio dos Sinos',
-      subtitle: 'Bachelor of Information Systems',
-      period: '2015 - 2021',
-      location: 'São Leopoldo, Rio Grande do Sul, Brazil',
-    },
-    {
-      title: 'Instituição Evangélica de Novo Hamburgo - IENH',
-      subtitle: 'Information Technology',
-      period: '2011 - 2013',
-      location: 'Novo Hamburgo, Rio Grande do Sul, Brazil',
-    },
-  ],
   linkedinUrl: 'https://www.linkedin.com/in/katieli-dieter/',
+  projects: [
+    {
+      title: 'project1',
+      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      tags: [
+        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+      ],
+    },
+    {
+      title: 'project1',
+      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      tags: [
+        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+      ],
+    },
+    {
+      title: 'project1',
+      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      tags: [
+        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+      ],
+    },
+    {
+      title: 'project1',
+      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      tags: [
+        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+      ],
+    },
+  ],
 };
