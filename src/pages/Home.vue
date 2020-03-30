@@ -33,18 +33,25 @@
         :skills="skills"
       />
     </section>
-    <section id="projects">projects grid</section>
+    <section id="projects">
+      <h2> projects </h2>
+      <projects-grid
+        :projects="projects"
+      />
+    </section>
     <section id="contacts">contact me</section>
   </div>
 </template>
 <script>
 import ProfessionalData from '../data/professional-data';
 import HelloWorld from '../components/HelloWorld.vue';
+import ProjectsGrid from '../components/ProjectsGrid.vue';
 import SkillsPanel from '../components/SkillsPanel.vue';
 
 export default {
   components: {
     HelloWorld,
+    ProjectsGrid,
     SkillsPanel,
   },
   computed: {
@@ -55,7 +62,12 @@ export default {
         alt: this.professional.name,
       };
     },
-    skills() { return this.professional.skills; },
+    skills() {
+      return this.professional.skills;
+    },
+    projects() {
+      return this.professional.projects;
+    },
   },
   methods: {
     goToLinkedin() {
@@ -83,14 +95,10 @@ section
 
 #about-me
   display flex
-  flex-direction row
-  h2
-    font-size 40px
-    text-align left
-    margin 0px
+  flex-direction column
 
-    @media only screen and (min-width: 768px)
-      font-size 65px
+  @media only screen and (min-width: 768px)
+    flex-direction row
 
   .about-me__content
     display flex
@@ -117,4 +125,13 @@ section
       border-radius 5px
       border none
       cursor pointer
+
+h2
+  font-size 40px
+  text-align left
+  margin 0px
+
+  @media only screen and (min-width: 768px)
+    font-size 65px
+
 </style>
