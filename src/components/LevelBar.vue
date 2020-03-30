@@ -16,9 +16,9 @@
 
 <script>
 const LEVELS = {
-  junior: '100px',
-  intermediate: '200px',
-  advanced: '300px',
+  junior: '33%',
+  intermediate: '66%',
+  advanced: '100%',
 };
 
 export default {
@@ -46,9 +46,12 @@ export default {
   height 10px
 
 .secundary-bar
-  width 300px
+  width 150px
   height 10px
   background-color #cacaca
+
+  @media only screen and (min-width: 768px)
+    width 300px
 
 p
   text-align right
