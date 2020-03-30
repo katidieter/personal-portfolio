@@ -48,31 +48,35 @@ export default {
   linkedinUrl: 'https://www.linkedin.com/in/katieli-dieter/',
   projects: [
     {
-      title: 'project1',
-      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      title: 'NASA Space Apps Challenge',
+      image: 'https://www.nasa.gov/sites/default/files/thumbnails/image/solve_international_space_apps_challenge.png',
+      repositoryLink: 'https://github.com/katidieter/nasa-space-challenge',
       tags: [
-        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+        { name: 'javascript' }, { name: 'vuejs' }, { name: 'nodejs' },
       ],
     },
     {
-      title: 'project1',
-      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      title: 'GraphQL API',
+      image: 'https://miro.medium.com/max/1200/1*RiEzZRJuIuurCJnAphLxHA.png',
+      repositoryLink: 'https://github.com/katidieter/graphql-api',
       tags: [
-        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+        { name: 'nodejs' }, { name: 'graphql' }, { name: 'mongodb' },
       ],
     },
     {
-      title: 'project1',
-      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      title: 'UI Testing project with TestCafe',
+      image: 'https://raw.githubusercontent.com/DevExpress/testcafe-gh-page-assets/master/src/images/testcafe-ogp-icon.png',
+      repositoryLink: 'https://github.com/katidieter/teste-cafe-testing-project',
       tags: [
-        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+        { name: 'javascript' }, { name: 'testcafe' }, { name: 'testing' }, { name: 'nodejs' }, { name: 'page-objects' },
       ],
     },
     {
-      title: 'project1',
-      image: 'https://blog.rocketseat.com.br/content/images/2019/03/Iniciando_com_GraphQL_no_NodeJS_e_ExpressJS.png',
+      title: 'UI Testing project with TestNG',
+      image: 'https://miro.medium.com/max/3200/1*Iu_5N-oT73aFPyvXrbZlag.png',
+      repositoryLink: 'https://github.com/katidieter/phptravels-automation-testing/tree/master/prova-tecnica',
       tags: [
-        { name: 'tag1' }, { name: 'tag2' }, { name: 'tag3' },
+        { name: 'testng' }, { name: 'java' }, { name: 'testing' },
       ],
     },
   ],
