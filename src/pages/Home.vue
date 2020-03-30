@@ -81,7 +81,6 @@ export default {
 section
   padding 0px 20px
   @media only screen and (min-width: 768px)
-    height 100vh
     padding 70px 100px 0px 100px
 
 #home
