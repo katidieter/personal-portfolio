@@ -8,17 +8,30 @@
       />
     </section>
     <section id="about-me">
-      <h2>About me</h2>
-      <div class="about-me__content">
-        <div>
-          {{ professional.history }}
+      <div>
+        <h2>about me</h2>
+        <div
+          class="about-me__content"
+        >
+          <div class="who-am-i">
+            <p class="intro">
+              {{ professional.intro }}
+            </p>
+            <p>
+              {{ professional.history }}
+            </p>
+            <button
+              @click="goToLinkedin"
+              class="linkedin-profile-button"
+            >
+              View my LinkedIn profile
+            </button>
+          </div>
         </div>
-        <div class="about-me__cards">
-          <HistoryCard cardName="Latest experiences" :items="professional.experiences"/>
-          <HistoryCard cardName="Education" :items="professional.education"/>
-        </div>
-        <button @click="goToLinkedin()">Click to see my LinkedIn</button>
       </div>
+      <skills-panel
+        :skills="skills"
+      />
     </section>
     <section id="projects">projects grid</section>
     <section id="contacts">contact me</section>
@@ -27,12 +40,12 @@
 <script>
 import ProfessionalData from '../data/professional-data';
 import HelloWorld from '../components/HelloWorld.vue';
-import HistoryCard from '../components/HistoryCard.vue';
+import SkillsPanel from '../components/SkillsPanel.vue';
 
 export default {
   components: {
     HelloWorld,
-    HistoryCard,
+    SkillsPanel,
   },
   computed: {
     professional() { return ProfessionalData; },
@@ -54,10 +67,10 @@ export default {
 </script>
 <style lang="stylus" scoped>
 section
-  padding-top 15px
-
-@media only screen and (min-width: 768px)
-  height 100vh
+  padding 0px 20px
+  @media only screen and (min-width: 768px)
+    height 100vh
+    padding 70px 100px 0px 100px
 
 #home
   height 100vh
@@ -67,21 +80,41 @@ section
 
   @media only screen and (min-width: 768px)
     justify-content flex-start
-    padding-left 80px
 
-@media only screen and (min-width: 768px)
-  section
-    height 100vh
-
-.about-me__content
-  padding 1rem
-
-.about-me__cards
+#about-me
   display flex
-  flex-direction column
+  flex-direction row
+  h2
+    font-size 40px
+    text-align left
+    margin 0px
 
-@media only screen and (min-width: 768px)
-  .about-me__cards
-    flex-direction row
+    @media only screen and (min-width: 768px)
+      font-size 65px
 
+  .about-me__content
+    display flex
+    flex-direction column
+
+  .who-am-i
+    @media only screen and (min-width: 768px)
+      margin-right 20px
+      width 80%
+    .intro
+      font-size 24px
+      color #767A7D
+      text-align left
+    p
+      text-align justify
+      font-size 18px
+    .linkedin-profile-button
+      margin-top 20px
+      padding 20px
+      background-color #D390B7
+      color #fff
+      font-weight 600
+      font-size 18px
+      border-radius 5px
+      border none
+      cursor pointer
 </style>
