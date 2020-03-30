@@ -4,25 +4,22 @@ import LinkedinIcon from '../assets/icons/linkedin.png';
 import MediumIcon from '../assets/icons/medium.webp';
 
 export default {
-  name: 'Katie',
+  name: 'Katieli Dieter',
   avatar: 'kati.png',
   role: 'Software Engineer',
   skills: [
-    { name: 'Vue.js', kind: 'hard' },
-    { name: 'Ruby', kind: 'hard' },
-    { name: 'Node.js', kind: 'hard' },
-    { name: 'Teamwork', kind: 'soft' },
-    { name: 'Javascript', kind: 'hard' },
-    { name: 'Leadership', kind: 'soft' },
-    { name: 'Problem solving', kind: 'soft' },
-    { name: 'Responsability', kind: 'soft' },
-    { name: 'Git', kind: 'hard' },
-    { name: 'Clean code', kind: 'hard' },
-    { name: 'Proactively', kind: 'soft' },
-    { name: 'Goal-driven', kind: 'soft' },
-    { name: 'Object-oriented', kind: 'hard' },
-    { name: 'Unit/UI Testing', kind: 'hard' },
-    { name: 'CSS', kind: 'hard' },
+    { name: 'Front-end', kind: 'hard', level: 'intermediate' },
+    { name: 'Back-end', kind: 'hard', level: 'intermediate' },
+    { name: 'Teamwork', kind: 'soft', level: 'advanced' },
+    { name: 'Leadership', kind: 'soft', level: 'junior' },
+    { name: 'Machine learning', kind: 'hard', level: 'junior' },
+    { name: 'Problem solving', kind: 'soft', level: 'intermediate' },
+    { name: 'Responsability', kind: 'soft', level: 'advanced' },
+    { name: 'Proactively', kind: 'soft', level: 'intermediate' },
+    { name: 'Goal-driven', kind: 'soft', level: 'intermediate' },
+    { name: 'Cloud', kind: 'hard', level: 'junior' },
+    { name: 'Unit Testing', kind: 'hard', level: 'intermediate' },
+    { name: 'Clean code', kind: 'hard', level: 'advanced' },
   ],
   socialMedias: [
     {
@@ -46,7 +43,8 @@ export default {
       icon: DevToIcon,
     },
   ],
-  history: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  intro: 'I am a software engineer based in sunny Brazil.',
+  history: 'With for more than 8 years experiency in technology I had worked in different areas as technical support, quality assurance and now as developer and leader. I enjoy to solve complex problems with simple ideas. When I am not coding or leadering the team or writing something you will find me hanging out with friends, tasting a coffee, running or spending time at nature.',
   experiences: [
     {
       title: 'Wedy',
