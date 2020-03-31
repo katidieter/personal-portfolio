@@ -41,23 +41,25 @@
     </section>
     <section id="contact-me">
       <h2>contact me</h2>
-      <div class="contact-me__text">
-        <p class="section-introduction">
-          I am available for freelance!
-        </p>
-      </div>
-      <div class="contact-me__actions">
-        <button
-          @click="goToLinkedin"
-          class="linkedin-profile-button"
-        >
-          Send me a message at Linkedin
-        </button>
-        <div class="contact-me__email">
-          <div>
-            Or send me an email <span id="email">katielidieter@gmail.com</span>
+      <div class="contact-me__content">
+        <div class="contact-me__text">
+          <p class="section-introduction">
+            I am available for freelance projects!
+          </p>
+        </div>
+        <div class="contact-me__actions">
+          <button
+            @click="goToLinkedin"
+            class="linkedin-profile-button"
+          >
+            Send me a message at Linkedin
+          </button>
+          <div class="contact-me__email">
+            <div>
+              Or send me an email <span id="email">katielidieter@gmail.com</span>
+            </div>
+            <img src="../assets/icons/copy.png" @click="copyEmail">
           </div>
-          <img src="../assets/icons/copy.png" @click="copyEmail">
         </div>
       </div>
     </section>
@@ -122,6 +124,8 @@ export default {
 
 </script>
 <style lang="stylus" scoped>
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 section
   padding 0px 20px
   @media only screen and (min-width: 768px)
@@ -154,17 +158,49 @@ section
 #contact-me
   height 100vh
 
+  .contact-me__content
+    display flex
+    flex-direction column
+    justify-content center
+    height 70%
+
   @media only screen and (min-width: 768px)
     .contact-me__text
       width 30%
+
+      p
+        border-right solid 3px #72C6B3
+        white-space nowrap
+        overflow hidden
+        font-family 'Source Code Pro', monospace
+        @media only screen and (min-width: 768px)
+          font-size 28px
+
+      /* Animation */
+      p
+        animation animated-text 4s steps(29,end) 1s 1 normal both,
+          animated-cursor 600ms steps(29,end) infinite;
+
+      @keyframes animated-text
+        from{width: 0;}
+        to{width: 635px;}
+
+      /* cursor animations */
+      @keyframes animated-cursor
+        from{border-right-color: #72C6B3;}
+        to{border-right-color: transparent;}
+
   .contact-me__actions
     display flex
     flex-direction column
-    width 50%
+    // align-items center
+    @media only screen and (min-width: 768px)
+      width 50%
 
     button
       margin 0px
-      width 80%
+      @media only screen and (min-width: 768px)
+        width 80%
 
     p
       font-weight 500
@@ -210,5 +246,4 @@ h2
   border-radius 5px
   border none
   cursor pointer
-
 </style>
