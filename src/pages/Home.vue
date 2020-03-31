@@ -14,10 +14,10 @@
           class="about-me__content"
         >
           <div class="who-am-i">
-            <p class="intro">
+            <p class="section-introduction">
               {{ professional.intro }}
             </p>
-            <p>
+            <p class="section-description">
               {{ professional.history }}
             </p>
             <button
@@ -39,7 +39,28 @@
         :projects="projects"
       />
     </section>
-    <section id="contacts">contact me</section>
+    <section id="contact-me">
+      <h2>contact me</h2>
+      <div class="contact-me__text">
+        <p class="section-introduction">
+          I am available for freelance!
+        </p>
+      </div>
+      <div class="contact-me__actions">
+        <button
+          @click="goToLinkedin"
+          class="linkedin-profile-button"
+        >
+          Send me a message at Linkedin
+        </button>
+        <div class="contact-me__email">
+          <div>
+            Or send me an email <span id="email">katielidieter@gmail.com</span>
+          </div>
+          <img src="../assets/icons/copy.png" @click="copyEmail">
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -72,6 +93,29 @@ export default {
   methods: {
     goToLinkedin() {
       window.open(this.professional.linkedinUrl, '_blank');
+    },
+    copyEmail() {
+      const email = document.getElementById('email');
+
+      if (document.body.createTextRange) {
+        this.copyElementAtInternetExplorer(email);
+      } else if (window.getSelection) {
+        this.copyElementAtBrowser(email);
+      }
+    },
+    copyElementAtInternetExplorer(element) {
+      const range = document.body.createTextRange();
+      range.moveToElementText(element);
+      range.select();
+      document.execCommand('Copy');
+    },
+    copyElementAtBrowser(element) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('Copy');
     },
   },
 };
@@ -107,23 +151,37 @@ section
     @media only screen and (min-width: 768px)
       margin-right 20px
       width 80%
-    .intro
-      font-size 24px
-      color #767A7D
-      text-align left
+#contact-me
+  height 100vh
+
+  @media only screen and (min-width: 768px)
+    .contact-me__text
+      width 30%
+  .contact-me__actions
+    display flex
+    flex-direction column
+    width 50%
+
+    button
+      margin 0px
+      width 80%
+
     p
-      text-align justify
-      font-size 18px
-    .linkedin-profile-button
-      margin-top 20px
-      padding 20px
-      background-color #D390B7
-      color #fff
-      font-weight 600
-      font-size 18px
-      border-radius 5px
-      border none
-      cursor pointer
+      font-weight 500
+      font-size 14px
+
+    .contact-me__email
+      display flex
+      flex-direction row
+      align-items center
+      justify-content flex-start
+      margin 10px
+
+      #email
+        color #767A7D
+      img
+        height 20px
+        cursor pointer
 
 h2
   font-size 40px
@@ -132,5 +190,25 @@ h2
 
   @media only screen and (min-width: 768px)
     font-size 65px
+
+.section-introduction
+  font-size 24px
+  color #767A7D
+  text-align left
+
+.section-description
+  text-align justify
+  font-size 18px
+
+.linkedin-profile-button
+  margin-top 20px
+  padding 20px
+  background-color #D390B7
+  color #fff
+  font-weight 600
+  font-size 18px
+  border-radius 5px
+  border none
+  cursor pointer
 
 </style>

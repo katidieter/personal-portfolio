@@ -29,7 +29,7 @@ export default {
         { name: 'hello world!', src: '#home' },
         { name: 'about me', src: '#about-me' },
         { name: 'projects', src: '#projects' },
-        { name: 'contact', src: '#contacts' },
+        { name: 'contact me', src: '#contact-me' },
       ],
     };
   },
