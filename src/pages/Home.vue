@@ -162,7 +162,8 @@ section
     display flex
     flex-direction column
     justify-content center
-    height 70%
+    @media only screen and (max-width: 768px)
+      height 70%
 
   @media only screen and (min-width: 768px)
     .contact-me__text
