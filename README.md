@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+### How to deploy to production
+```
+https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
+```
+
 ### Run your tests
 ```
 npm run test
