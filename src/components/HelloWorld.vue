@@ -12,6 +12,10 @@
       <h2 class="subtitle">
         {{ subtitle }}
       </h2>
+      <p>
+        Here you will find <b>free</b> and <b>simplify</b> content about Carreer,
+        Women in Tech, Software and Machine Learning Engineer
+      </p>
     </div>
   </div>
 </template>
@@ -52,7 +56,7 @@ export default {
 
   .text
     text-align center
-    margin-top 30px
+    margin-top 20px
 
     @media only screen and (min-width: 768px)
       text-align left
@@ -60,12 +64,16 @@ export default {
     h1, h2
       margin 0
     h1
-      font-size 40px
+      font-size 35px
       @media only screen and (min-width: 768px)
         font-size 50px
     h2
-      font-size 25px
-      color #72C6B3
+      font-size 22px
+      color #075F93
       @media only screen and (min-width: 768px)
         font-size 30px
+    p
+      font-size 18px
+      @media only screen and (min-width: 768px)
+        font-size 22px
 </style>

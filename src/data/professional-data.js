@@ -2,11 +2,12 @@ import DevToIcon from '../assets/icons/dev-to.svg';
 import GitHubIcon from '../assets/icons/git-hub.svg';
 import LinkedinIcon from '../assets/icons/linkedin.png';
 import MediumIcon from '../assets/icons/medium.webp';
+import TwitterIcon from '../assets/icons/twitter.png';
 
 export default {
   name: 'Katieli Dieter',
-  avatar: 'kati.png',
-  role: 'Software Engineer',
+  avatar: 'kati_2.png',
+  role: 'Software & Machine Learninig Engineer',
   skills: [
     { name: 'Front-end', kind: 'hard', level: 'intermediate' },
     { name: 'Back-end', kind: 'hard', level: 'intermediate' },
@@ -28,14 +29,19 @@ export default {
       icon: LinkedinIcon,
     },
     {
-      name: 'Medium',
-      src: 'https://medium.com/@katielidieter',
-      icon: MediumIcon,
+      name: 'Twitter',
+      src: 'https://twitter.com/katidieter',
+      icon: TwitterIcon,
     },
     {
       name: 'GitHub',
       src: 'https://github.com/katidieter',
       icon: GitHubIcon,
+    },
+    {
+      name: 'Medium',
+      src: 'https://medium.com/@katielidieter',
+      icon: MediumIcon,
     },
     {
       name: 'Dev.to',
