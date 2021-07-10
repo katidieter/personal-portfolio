@@ -3,8 +3,9 @@
     <section id="home">
       <hello-world
         :avatar-image="professionalImage"
-        :title="`Hey! I'm ${professional.name}`"
+        :title="`Welcome, I'm ${professional.name}`"
         :subtitle="professional.role"
+        :subscribe="professional.subscribe"
       />
     </section>
     <section id="about-me">
@@ -127,6 +128,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 section
+  height 100vh
   padding 0px 20px
   @media only screen and (min-width: 768px)
     padding 70px 100px 0px 100px
@@ -136,9 +138,10 @@ section
   display flex
   justify-content center
   align-items center
+  flex-direction column
 
   @media only screen and (min-width: 768px)
-    justify-content flex-start
+    align-items flex-start
 
 #about-me
   display flex
