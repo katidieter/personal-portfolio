@@ -12,21 +12,23 @@
       <h2 class="subtitle">
         {{ subtitle }}
       </h2>
-      <p>
-        Here you will find <b>free</b> and <b>simplify</b> content about Carreer,
-        Women in Tech, Software and Machine Learning Engineer
-      </p>
+      <Subscribe
+        :description="subscribe.description"
+        :button="subscribe.button"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Avatar from './Avatar.vue';
+import Subscribe from './Subscribe.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
     Avatar,
+    Subscribe,
   },
   props: {
     avatarImage: {
@@ -39,6 +41,10 @@ export default {
     },
     subtitle: {
       type: String,
+      required: true,
+    },
+    subscribe: {
+      type: Object,
       required: true,
     },
   },
@@ -72,8 +78,4 @@ export default {
       color #075F93
       @media only screen and (min-width: 768px)
         font-size 30px
-    p
-      font-size 18px
-      @media only screen and (min-width: 768px)
-        font-size 22px
 </style>

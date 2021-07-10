@@ -3,8 +3,9 @@
     <section id="home">
       <hello-world
         :avatar-image="professionalImage"
-        :title="`Welcome, I'm ${professional.name}!`"
+        :title="`Welcome, I'm ${professional.name}`"
         :subtitle="professional.role"
+        :subscribe="professional.subscribe"
       />
     </section>
     <section id="about-me">

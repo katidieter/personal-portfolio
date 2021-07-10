@@ -8,6 +8,13 @@ export default {
   name: 'Katieli Dieter',
   avatar: 'kati_2.png',
   role: 'Software & Machine Learninig Engineer',
+  subscribe: {
+    description: 'Are you wanna know more about <b>machine learning</b>?',
+    button: {
+      callToAction: 'Sign up my newsletter and follow my work!',
+      url: 'https://katieli.substack.com/p/coming-soon?r=68bd4&utm_campaign=post&utm_medium=web&utm_source=copy',
+    },
+  },
   skills: [
     { name: 'Front-end', kind: 'hard', level: 'intermediate' },
     { name: 'Back-end', kind: 'hard', level: 'intermediate' },
