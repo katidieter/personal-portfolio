@@ -78,6 +78,7 @@ export default {
   padding-right: 8px;
   color: #767A7D;
   font-weight: 600;
+  font-size: 20px;
   text-decoration-line: none;
   padding: 0.5rem;
   z-index: 10;

@@ -6,7 +6,6 @@
         :social-medias="socialMedias"
       />
       <router-view></router-view>
-      <home/>
     </div>
   </div>
 </template>
@@ -14,13 +13,11 @@
 <script>
 import ProfessionalData from './data/professional-data';
 
-import Home from './pages/Home.vue';
 import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'app',
   components: {
-    Home,
     NavBar,
   },
   data() {
