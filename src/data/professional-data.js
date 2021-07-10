@@ -7,7 +7,7 @@ import TwitterIcon from '../assets/icons/twitter.png';
 export default {
   name: 'Katieli Dieter',
   avatar: 'kati_2.png',
-  role: 'Software & Machine Learninig Engineer',
+  role: 'Software & Machine Learning Engineer',
   subscribe: {
     description: 'Are you wanna know more about <b>machine learning</b>?',
     button: {
